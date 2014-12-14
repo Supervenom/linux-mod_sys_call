@@ -4,10 +4,11 @@
 #include <linux/sched.h>    /* Needed for task_struct*/
 
 void get_pid2(struct task_struct *tsk, char* str);
+void get_comm(struct task_struct *tsk, char* str);
 
 asmlinkage long sys_get_task(char __user *data, int len)
 {
-    char msg [200];
+    //char msg [200];
     char str [16]; 
     struct task_struct *cur_task_p;
     cur_task_p = get_current();
